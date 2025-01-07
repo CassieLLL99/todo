@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待办事项管理</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>待办事项管理</h1>
+        
+        <!-- 标签切换按钮 -->
+        <div class="tab-buttons">
+            <button class="tab-button active" data-tab="work">工作待办</button>
+            <button class="tab-button" data-tab="life">生活待办</button>
+        </div>
+
+        <!-- 添加新待办事项的表单 -->
+        <div class="add-todo">
+            <input type="text" id="taskInput" placeholder="输入任务名称">
+            <div class="input-row">
+                <input type="date" id="dateInput">
+                <select id="categorySelect">
+                    <option value="work">工作待办</option>
+                    <option value="life">生活待办</option>
+                </select>
+            </div>
+            <textarea id="noteInput" placeholder="添加备注（可选）"></textarea>
+            <button onclick="addTodo()">添加任务</button>
+        </div>
+
+        <!-- 待办事项列表容器 -->
+        <div class="todo-lists">
+            <div id="work" class="todo-list active">
+                <h2>工作待办</h2>
+                <div class="tasks"></div>
+            </div>
+            <div id="life" class="todo-list">
+                <h2>生活待办</h2>
+                <div class="tasks"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

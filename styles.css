@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+    color: #2c3e50;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1a73e8;
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.tab-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    color: #666;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+}
+
+.tab-button.active {
+    background-color: #1a73e8;
+    color: white;
+    box-shadow: 0 2px 8px rgba(26, 115, 232, 0.3);
+}
+
+.add-todo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.add-todo .input-row {
+    display: flex;
+    gap: 15px;
+}
+
+.add-todo input[type="text"] {
+    width: 100%;
+}
+
+.add-todo input[type="date"] {
+    width: 130px;
+    font-family: Arial, sans-serif;
+}
+
+.add-todo select {
+    width: auto;
+    min-width: 100px;
+}
+
+.add-todo textarea {
+    width: 100%;
+    min-height: 80px;
+    resize: vertical;
+}
+
+.add-todo button {
+    align-self: center;
+    width: auto;
+    min-width: 120px;
+    padding: 8px 20px;
+}
+
+.add-todo input,
+.add-todo select,
+.add-todo button {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+}
+
+.add-todo input:focus,
+.add-todo select:focus,
+.add-todo textarea:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.add-todo button {
+    padding: 8px 20px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: auto;
+    min-width: 120px;
+}
+
+.add-todo button:hover {
+    background-color: #1557b0;
+    box-shadow: 0 2px 8px rgba(26, 115, 232, 0.3);
+}
+
+.add-todo input[type="text"],
+.add-todo input[type="date"] {
+    width: 100%;
+}
+
+.add-todo textarea {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    resize: vertical;
+    min-height: 80px;
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #2c3e50;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.add-todo select {
+    width: auto;
+}
+
+.todo-list {
+    display: none;
+    padding: 10px;
+}
+
+.todo-list.active {
+    display: block;
+}
+
+.todo-list h2 {
+    color: #1a73e8;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.task {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 15px;
+    padding: 16px;
+    margin: 10px 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.task input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #1a73e8;
+}
+
+.task.completed {
+    text-decoration: none;
+    opacity: 0.7;
+    background-color: #f8f9fa;
+}
+
+.task.completed .task-content {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.task-content {
+    font-size: 1em;
+    color: #2c3e50;
+}
+
+.delete-btn {
+    padding: 8px 16px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+.task-date {
+    color: #666;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+}
+
+.task-note {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.task-note ul {
+    margin: 0;
+    padding-left: 25px;
+    list-style-type: disc;
+}
+
+.task-note li {
+    margin: 5px 0;
+    color: #555;
+}
+
+.add-todo input::placeholder,
+.add-todo textarea::placeholder {
+    color: #999;
+}
+
+.add-todo input[type="date"] {
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.add-todo input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.add-todo input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+} 
